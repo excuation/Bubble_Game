@@ -1,0 +1,49 @@
+var hit = 0;
+
+function bubblegame() {
+    var clutter = "";
+    for (var i = 0; i <= 130; i++) {
+        var no = Math.floor(Math.random() * 10);
+        clutter += `<div class="bubble">${no}</div>`;
+    }
+    document.querySelector(".pbtm").innerHTML = clutter;
+}
+
+function settime() {
+    var timer = 60;
+    var timet = setInterval(function() {
+        if (timer <= 0) {
+            clearInterval(timet);
+            document.querySelector(".pbtm").innerHTML = "<h1 style='color: blue; font-size: 24px; text-align: center;'>GAME COMPLETED and your score is " + score+ "</h1>"; // Clear bubbles when time is up
+
+        } else {
+            timer--;
+            document.querySelector("#timer").innerHTML = timer;
+        }
+    }, 1000);
+}
+
+function gethit() {
+    hit = Math.floor(Math.random() * 10); // Assign to the global variable hit
+    document.querySelector("#newhit").innerHTML = hit;
+}
+
+bubblegame();
+settime();
+gethit();
+
+var score = 0;
+
+function scoreincrease() {
+    score += 10;
+    document.querySelector("#scores").textContent = score;
+}
+
+document.querySelector(".pbtm").addEventListener("click", function(debts) {
+    var clicknum = Number(debts.target.textContent);
+    if (clicknum === hit) {
+        scoreincrease();
+        bubblegame();
+        gethit(); // Generate a new hit after a successful click
+    }
+});
