@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#panel {
+    overflow: hidden;
+    height: 70%;
+    width: 90%;
+    background-color: rgba(11, 241, 241, 0.413);
+    border-radius: 10px;
+
+}
+#ptop{
+    height: 20%;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    overflow: hidden;
+    padding: 10px;
+}
+.elem{
+    width: 10%;
+}
+.box{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    width: 30%;
+
+}
+.bubble{
+    
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(39, 96, 96);
+    color: whitesmoke;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.pbtm{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
